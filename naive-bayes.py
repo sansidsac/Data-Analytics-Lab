@@ -37,11 +37,6 @@ for i in range(4):
             rnum=k
             break
     val=req[i][1]
-    pval=0.0
-    for j in range(1,15):
-        if data[j][rnum]==val:
-            pval+=1
-    pval/=14
     pvalyes=0.0
     pvalno=0.0
     for j in range(1,15):
@@ -51,8 +46,8 @@ for i in range(4):
             pvalno+=1
     pvalyes/=yescount
     pvalno/=nocount
-    yesno[i][0]=pvalyes/pval
-    yesno[i][1]=pvalno/pval
+    yesno[i][0]=pvalyes
+    yesno[i][1]=pvalno
 
 theyes=yesno[0][0]*yesno[1][0]*yesno[2][0]*yesno[3][0]*pyes
 theno=yesno[0][1]*yesno[1][1]*yesno[2][1]*yesno[3][1]*pno
